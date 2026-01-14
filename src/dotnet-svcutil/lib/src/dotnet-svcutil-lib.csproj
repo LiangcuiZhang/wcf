@@ -36,11 +36,7 @@
     <Compile Remove="FrameworkFork\Microsoft.CodeDom\**" />
     <EmbeddedResource Remove="FrameworkFork\Microsoft.CodeDom\**" />
     <None Remove="FrameworkFork\Microsoft.CodeDom\**" />
-
-    <!-- Re-include specific files from excluded folders -->
-    <Compile Include="FrameworkFork\Microsoft.CodeDom\System\CodeIfDirective.cs" />
-    <Compile Include="FrameworkFork\Microsoft.CodeDom\System\CodeIfMode.cs" />
-  </ItemGroup>
+    </ItemGroup>
   <ItemGroup>
     <!-- AssemblyInformationalVersionAttribute is used at runtime to find the NuGet package, it must be the as the pkg version. -->
     <AssemblyAttribute Include="System.Reflection.AssemblyInformationalVersionAttribute">

@@ -65,13 +65,20 @@ namespace Microsoft.Tools.ServiceModel.Svcutil
                     GenerateBeginMethodInvokeExpression(methodName),
                     delegateOfEndCall)));
 
+            // For CloseAsync, add conditional compilation directives using CodeRegionDirective as a marker
+            // This will be replaced with #if/#endif in post-processing
             if (methodName.Equals("Close"))
             {
                 string condition = _isVisualBasic ? "Not NET6_0_OR_GREATER" : "!NET6_0_OR_GREATER";
-                CodeIfDirective ifStart = new CodeIfDirective(CodeIfMode.Start, condition);
-                CodeIfDirective ifEnd = new CodeIfDirective(CodeIfMode.End, "");
-                implMethod.StartDirectives.Add(ifStart);
-                implMethod.EndDirectives.Add(ifEnd);
+
+                // Use CodeRegionDirective (100% System.CodeDom) with special marker format
+                CodeRegionDirective regionStart = new CodeRegionDirective(
+                    CodeRegionMode.Start, $"CONDITIONAL_IF:{condition}");
+                CodeRegionDirective regionEnd = new CodeRegionDirective(
+                    CodeRegionMode.End, "");
+
+                implMethod.StartDirectives.Add(regionStart);
+                implMethod.EndDirectives.Add(regionEnd);
             }
 
             return implMethod;
