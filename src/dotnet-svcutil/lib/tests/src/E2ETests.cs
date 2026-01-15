@@ -77,7 +77,7 @@ namespace SvcutilTest
         [Trait("Category", "Test")]
         [Theory]
         [InlineData("tfmDefault", null)]
-        [InlineData("tfmNet60", "net6.0")]
+        [InlineData("tfmNet10", "net10.0")]
         [InlineData("tfmNetstd20", "netstandard2.0")]
         [InlineData("tfmNetstd21", "netstandard2.1")]
         public void TFMBootstrap(string testCaseName, string targetFramework)
@@ -203,7 +203,7 @@ namespace SvcutilTest
 
         [Trait("Category", "BVT")]
         [Theory]
-        [InlineData("TypeReuse60", "net6.0")]
+        [InlineData("TypeReuse10", "net10.0")]
         public void TypeReuse(string testCaseName, string targetFramework)
         {
             this_TestCaseName = "TypeReuse";

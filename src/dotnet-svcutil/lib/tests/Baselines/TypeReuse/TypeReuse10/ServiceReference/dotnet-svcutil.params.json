@@ -3,10 +3,10 @@
   "version": "99.99.99",
   "options": {
     "inputs": [
-      "../../../../../src/dotnet-svcutil/lib/tests/TestCases/wsdl/WcfProjectNService/tempuri.org.wsdl"
+      "../../TypeReuseSvc.wsdl"
     ],
     "namespaceMappings": [
-      "*, TestNamespace"
+      "*, TypeReuse10_NS"
     ],
     "outputFile": "Reference.cs",
     "references": [
@@ -23,6 +23,8 @@
       "NuGet.ProjectModel, {NuGet.ProjectModel, 99.99.99}",
       "NuGet.Protocol, {NuGet.Protocol, 99.99.99}",
       "NuGet.Versioning, {NuGet.Versioning, 99.99.99}",
+      "$resultPath$//TestResults//TypeReuse//TypeReuse10//bin//Debug//net10.0//BinLib.dll",
+      "$resultPath$//TestResults//TypeReuse//TypeReuse10//bin//Debug//net10.0//TypesLib.dll",
       "System.CodeDom, {System.CodeDom, 99.99.99}",
       "System.Security.Cryptography.Pkcs, {System.Security.Cryptography.Pkcs, 99.99.99}",
       "System.Security.Cryptography.ProtectedData, {System.Security.Cryptography.ProtectedData, 99.99.99}"

@@ -184,13 +184,13 @@ namespace SvcutilTest
 
         [Trait("Category", "BVT")]
         [Theory]
-        [InlineData("net6.0", "-elm")]
+        [InlineData("net10.0", "-elm")]
         public async Task ParamsFiles_SDK_TFM(string targetFramework, string extraOptions)
         {
             this_TestCaseName = "ParamsFiles_SDK_TFM";
             TestFixture();
             var testCaseName = $"TF{targetFramework}".Replace(".", "_");
-            InitializeGlobal(testCaseName, targetFramework: "net6.0", g_SdkVersion);
+            InitializeGlobal(testCaseName, targetFramework: "net10.0", g_SdkVersion);
             this_TestCaseProject.TargetFramework = targetFramework;
             await this_TestCaseProject.SaveAsync(this_TestCaseLogger, System.Threading.CancellationToken.None);
 

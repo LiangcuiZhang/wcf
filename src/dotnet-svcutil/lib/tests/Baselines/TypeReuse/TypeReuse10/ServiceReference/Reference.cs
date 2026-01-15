@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TypeReuse60_NS
+namespace TypeReuse10_NS
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "99.99.99")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TypeReuse60_NS.ITypeReuseSvc")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TypeReuse10_NS.ITypeReuseSvc")]
     public interface ITypeReuseSvc
     {
         
@@ -24,13 +24,13 @@ namespace TypeReuse60_NS
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "99.99.99")]
-    public interface ITypeReuseSvcChannel : TypeReuse60_NS.ITypeReuseSvc, System.ServiceModel.IClientChannel
+    public interface ITypeReuseSvcChannel : TypeReuse10_NS.ITypeReuseSvc, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "99.99.99")]
-    public partial class TypeReuseSvcClient : System.ServiceModel.ClientBase<TypeReuse60_NS.ITypeReuseSvc>, TypeReuse60_NS.ITypeReuseSvc
+    public partial class TypeReuseSvcClient : System.ServiceModel.ClientBase<TypeReuse10_NS.ITypeReuseSvc>, TypeReuse10_NS.ITypeReuseSvc
     {
         
         /// <summary>
@@ -88,10 +88,12 @@ namespace TypeReuse60_NS
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndOpen));
         }
         
+        #if !NET6_0_OR_GREATER
         public virtual System.Threading.Tasks.Task CloseAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginClose(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndClose));
         }
+        #endif
         
         private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
         {

@@ -1,14 +1,20 @@
 {
-  "providerId": "Microsoft.Tools.ServiceModel.Svcutil",
+  "providerId": "Microsoft.Tools.ServiceModel.Svcutil-bootstrap",
   "version": "99.99.99",
   "options": {
     "inputs": [
-      "../../../../../src/dotnet-svcutil/lib/tests/TestCases/wsdl/WcfProjectNService/tempuri.org.wsdl"
+      "$resultPath$/TestResults/TypeReuse/TypeReuseSvc.wsdl"
     ],
+    "bootstrapPath": "$resultPath$/TestResults/TypeReuse/TypeReuse10",
     "namespaceMappings": [
-      "*, TestNamespace"
+      "*, TypeReuse10_NS"
     ],
-    "outputFile": "Reference.cs",
+    "noBootstrapping": true,
+    "noLogo": true,
+    "noProjectUpdates": true,
+    "outputDir": "$resultPath$/TestResults/TypeReuse/TypeReuse10/ServiceReference",
+    "outputFile": "$resultPath$/TestResults/TypeReuse/TypeReuse10/ServiceReference/Reference.cs",
+    "projectFile": "$resultPath$/TestResults/TypeReuse/TypeReuse10/TypeReuse10.csproj",
     "references": [
       "dotnet-svcutil-lib, {dotnet-svcutil-lib, 99.99.99}",
       "Microsoft.ApplicationInsights, {Microsoft.ApplicationInsights, 99.99.99}",
@@ -23,11 +29,15 @@
       "NuGet.ProjectModel, {NuGet.ProjectModel, 99.99.99}",
       "NuGet.Protocol, {NuGet.Protocol, 99.99.99}",
       "NuGet.Versioning, {NuGet.Versioning, 99.99.99}",
+      "$resultPath$//TestResults//TypeReuse//TypeReuse10//bin//Debug//net10.0//BinLib.dll",
+      "$resultPath$//TestResults//TypeReuse//TypeReuse10//bin//Debug//net10.0//TypesLib.dll",
       "System.CodeDom, {System.CodeDom, 99.99.99}",
       "System.Security.Cryptography.Pkcs, {System.Security.Cryptography.Pkcs, 99.99.99}",
       "System.Security.Cryptography.ProtectedData, {System.Security.Cryptography.ProtectedData, 99.99.99}"
     ],
     "targetFramework": "N.N",
-    "typeReuseMode": "All"
+    "toolContext": "Bootstrapper",
+    "typeReuseMode": "All",
+    "verbosity": "Minimal"
   }
 }
